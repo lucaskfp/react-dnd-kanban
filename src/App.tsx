@@ -28,7 +28,7 @@ export function App() {
 
           <div className="flex gap-4">
             <Column title="To do">
-              {Array.from({ length: 10 }).map((_, index) => (
+              {Array.from({ length: 20 }).map((_, index) => (
                 <Card
                   key={index}
                   title={`Card ${index + 1}`}
