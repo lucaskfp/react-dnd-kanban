@@ -10,7 +10,7 @@ export function App() {
 
       <Sidebar />
 
-      <main className="flex flex-col">
+      <main className="flex flex-col overflow-auto">
         <div className="p-6 border-b">
           <div className="container">
             <h3 className="text-xl font-semibold">567 Tasks</h3>
@@ -23,9 +23,7 @@ export function App() {
           </div>
         </div>
 
-        <div className="p-6 max-h-full overflow-scroll grow bg-red-400">
-          <h3 className="text-lg font-semibold mb-4">Scrollable area</h3>
-
+        <div className="p-6 max-h-full overflow-scroll grow ">
           <div className="flex gap-4">
             <Column title="To do">
               {Array.from({ length: 20 }).map((_, index) => (
@@ -49,7 +47,7 @@ export function App() {
 
 function Column(props: { children?: ReactNode; title: string }) {
   return (
-    <div className="bg-zinc-100 rounded-md p-3 flex flex-col gap-2 w-[400px]">
+    <div className="bg-zinc-100 rounded-md p-3 flex flex-col gap-2 min-w-[400px]">
       <h4 className="font-semibold mb-4">{props.title}</h4>
       {props.children}
     </div>
